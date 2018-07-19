@@ -1,0 +1,19 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: piotrulek
+      changes:
+        - createTable:
+            tableName: event
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+        - createSequence:
+            sequenceName: event_seq
+
