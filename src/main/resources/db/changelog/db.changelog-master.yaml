@@ -13,6 +13,9 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
+              - column:
+                  name: message
+                  type: varchar(256)
 
         - createSequence:
             sequenceName: event_seq

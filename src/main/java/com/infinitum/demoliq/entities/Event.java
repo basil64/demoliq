@@ -7,9 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@SequenceGenerator(name = "event_seq", initialValue = 1, allocationSize = 100)
 public class Event {
     @Id
+    @SequenceGenerator(name = "event_seq", sequenceName = "event_seq", allocationSize = 100)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_seq")
     private Long id;
     private String message;
