@@ -30,8 +30,8 @@ public class EventRepositoryTest {
     public void findAllTest() {
         Event event_1 = new Event(null, "Event 1");
         Event event_2 = new Event(null, "Event 2");
-        Event savedEvent_1 = entityManager.persist(event_1);
-        Event savedEvent_2 = entityManager.persist(event_2);
+        entityManager.persist(event_1);
+        entityManager.persist(event_2);
         Iterable<Event> events = eventRepository.findAll();
         assertThat(events).hasSize(2);
         for (Event event : events) {
