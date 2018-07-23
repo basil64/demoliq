@@ -1,7 +1,8 @@
-package com.infinitum.demoliq.controllers;
+package com.infinitum.demoliq.unit.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.infinitum.demoliq.controllers.EventController;
 import com.infinitum.demoliq.entities.Event;
 import com.infinitum.demoliq.services.EventService;
 import org.hamcrest.Matchers;
@@ -20,6 +21,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.when;
@@ -40,7 +42,7 @@ public class EventControllerTest {
     @Mock
     private EventService eventService;
     private EventController eventController;
-    private Iterable<Event> events;
+    private List<Event> events;
     private Event eventToSave;
 
     @Before
@@ -49,7 +51,7 @@ public class EventControllerTest {
         eventToSave = new Event(null, MESSAGE);
         when(eventService.findAll()).thenReturn(events);
         when(eventService.save(eventToSave)).thenReturn(new Event(ID, MESSAGE));
-        when(eventService.findById(ID)).thenReturn(Optional.of(new Event(ID, MESSAGE)));
+        when(eventService.findById(ID)).thenReturn(new Event(ID, MESSAGE));
         eventController = new EventController(eventService);
         mockMvc = MockMvcBuilders.standaloneSetup(eventController).build();
     }

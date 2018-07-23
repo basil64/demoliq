@@ -1,6 +1,7 @@
-package com.infinitum.demoliq.repositories;
+package com.infinitum.demoliq.integration.repositories;
 
 import com.infinitum.demoliq.entities.Event;
+import com.infinitum.demoliq.repositories.EventRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

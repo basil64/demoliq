@@ -1,4 +1,4 @@
-package com.infinitum.demoliq;
+package com.infinitum.demoliq.integration;
 
 import com.infinitum.demoliq.entities.Event;
 import com.infinitum.demoliq.repositories.EventRepository;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @ActiveProfiles("test")
 @Profile("test")
-public class DemoliqApplicationTests {
+public class DemoliqApplicationTest {
 
     @Autowired
     private EventRepository eventRepository;
